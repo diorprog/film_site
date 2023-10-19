@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Eng so'ngi filmalar{% endblock %}
+
+{% block css %}
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/plyr.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__slider owl-carousel">
+                {% for item in hero %}
+                <div class="hero__items set-bg" data-setbg="{{ item.image.url }}">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <div class="label">{{ item.new }}</div>
+                                <h2>{{ item.name }}</h2>
+                                <p>{{ item.description }}</p>
+                                <a href="#"><span>{{ item.show }}</span> <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="trending__product">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="section-title">
+                                    <h4>Premyeralar</h4>
+                                </div>
+                            </div>
+{#                            <div class="col-lg-4 col-md-4 col-sm-4">#}
+{#                                <div class="btn__all">#}
+{#                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>#}
+{#                                </div>#}
+{#                            </div>#}
+                        </div>
+                        <div class="row">
+                            {% for item in premier %}
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="{{ item.image.url }}">
+                                        <div class="ep"> / 18</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>Aktiv</li>
+                                            <li>Kino</li>
+                                        </ul>
+                                        <h5><a href="#">{{ item.name }}</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="popular__product">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="section-title">
+                                    <h4>Mashhur filmlar</h4>
+                                </div>
+                            </div>
+{#                            <div class="col-lg-4 col-md-4 col-sm-4">#}
+{#                                <div class="btn__all">#}
+{#                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>#}
+{#                                </div>#}
+{#                            </div>#}
+                        </div>
+                        <div class="row">
+                            {% for item in popular %}
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="{{ item.image.url }}">
+                                        <div class="ep">18 / 18</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>Aktiv</li>
+                                            <li>Kino</li>
+                                        </ul>
+                                        <h5><a href="#">{{ item.name }}</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="recent__product">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="section-title">
+                                    <h4>Yaqinda qo'shilganlar</h4>
+                                </div>
+                            </div>
+{#                            <div class="col-lg-4 col-md-4 col-sm-4">#}
+{#                                <div class="btn__all">#}
+{#                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>#}
+{#                                </div>#}
+{#                            </div>#}
+                        </div>
+                        <div class="row">
+                            {% for item in recent %}
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="{{ item.image.url }}">
+                                        <div class="ep">18 / 18</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>Aktiv</li>
+                                            <li>Kino</li>
+                                        </ul>
+                                        <h5><a href="#">{{ item.name }}</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="live__product">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="section-title">
+                                    <h4>Filmlar</h4>
+                                </div>
+                            </div>
+{#                            <div class="col-lg-4 col-md-4 col-sm-4">#}
+{#                                <div class="btn__all">#}
+{#                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>#}
+{#                                </div>#}
+{#                            </div>#}
+                        </div>
+                        <div class="row">
+                            {% for item in film %}
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="{{ item.image.url }}">
+                                        <div class="ep">18 / 18</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>Aktiv</li>
+                                            <li>Kino</li>
+                                        </ul>
+                                        <h5><a href="#">{{ item.name }}</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="product__sidebar">
+                        <div class="product__sidebar__view">
+                            <div class="section-title">
+                                <h5>Top ko'rilganlar</h5>
+                            </div>
+{#                            <ul class="filter__controls">#}
+{#                                <li class="active" data-filter="*">Day</li>#}
+{#                                <li data-filter=".week">Week</li>#}
+{#                                <li data-filter=".month">Month</li>#}
+{#                                <li data-filter=".years">Years</li>#}
+{#                            </ul>#}
+                            <div class="filter__gallery">
+                                {% for item in tv %}
+                                <div class="product__sidebar__view__item set-bg mix day years"
+                                data-setbg="{{ item.image.url }}">
+                                <div class="ep">18 / ?</div>
+                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                <h5><a href="#">{{ item.name }}</a></h5>
+                            </div>
+                                {% endfor %}
+        </div>
+    </div>
+{#    <div class="product__sidebar__comment">#}
+{#        <div class="section-title">#}
+{#            <h5>Yangi komentariya</h5>#}
+{#        </div>#}
+{#        {% for item in comment %}#}
+{#        <div class="product__sidebar__comment__item">#}
+{#            <div class="product__sidebar__comment__item__pic">#}
+{#                <img src="{{ item.image.url }}" alt="">#}
+{#            </div>#}
+{#            <div class="product__sidebar__comment__item__text">#}
+{#                <ul>#}
+{#                    <li>Aktiv</li>#}
+{#                    <li>Kino</li>#}
+{#                </ul>#}
+{#                <h5><a href="#">{{ item.name }}</a></h5>#}
+{#                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>#}
+{#            </div>#}
+{#        </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Section End -->
+
+{% endblock %}
+
+{% block js %}
+<!-- Js Plugins -->
+<script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/player.js'%}"></script>
+<script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
+<script src="{% static 'js/mixitup.min.js'%}"></script>
+<script src="{% static 'js/jquery.slicknav.js'%}"></script>
+<script src="{% static 'js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'js/main.js'%}"></script>
+{% endblock %}
