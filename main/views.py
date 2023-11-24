@@ -2,7 +2,7 @@ from pyexpat.errors import XML_ERROR_RECURSIVE_ENTITY_REF
 
 from django.shortcuts import render, redirect
 
-from main.models import Premier, Popular, Recent, Film, Tv, Comment, Hero, Review, Disk
+from main.models import Premier, Popular, Recent, Film, Tv, Comment, Hero, Review
 
 
 def home(request):
@@ -14,7 +14,6 @@ def home(request):
     comment = Comment.objects.all()[:6]
     hero = Hero.objects.all()
     review = Review.objects.all()
-    disk = Disk.objects.all()
     return render(request, "index.html", {
         'premier': premier,
         'popular': popular,
@@ -23,8 +22,7 @@ def home(request):
         'tv': tv,
         'comment': comment,
         'hero': hero,
-        'review': review,
-        'disk': disk
+        'review': review
     })
 
 
@@ -59,10 +57,3 @@ def register(request):
 def contacts(request):
     return render(request, "contacts.html")
 
-
-def cart(request):
-    return render(request, "cart.html")
-
-
-def shop(request):
-    return render(request, "shop.html")

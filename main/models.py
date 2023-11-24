@@ -45,9 +45,3 @@ class Review(models.Model):
     description = models.CharField(max_length=250)
     image = models.ImageField(upload_to='review')
 
-
-class Disk(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.CharField(max_length=250)
-    price = models.IntegerField()
-    image = models.ImageField(upload_to='disk')
